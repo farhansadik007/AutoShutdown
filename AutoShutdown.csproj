@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <Resource Include="Fonts\*.otf" />
+    <Resource Include="AutoShutdown.ico" />
   </ItemGroup>
 
   <PropertyGroup>
