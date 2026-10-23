@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <Resource Include="Fonts\*.otf" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <AssemblyName>AutoShutdown</AssemblyName>
+    <RootNamespace>AutoShutdown</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>AutoShutdown.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <Product>AutoShutdown</Product>
+    <Description>A shutdown timer that looks as good as it works.</Description>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- WPF owns DPI awareness; the WinForms analyzer warning is not applicable. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+  </PropertyGroup>
+
+</Project>
