@@ -65,7 +65,7 @@ public static class PowerService
         IntPtr previousState,
         IntPtr returnLength);
 
-    [DllImport("advapi32.dll", SetLastError = true)]
+    [DllImport("kernel32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool CloseHandle(IntPtr handle);
 
