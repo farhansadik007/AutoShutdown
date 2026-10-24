@@ -178,7 +178,7 @@ public static class StoreAssets
 
         using (var orange = new SolidBrush(Orange))
         {
-            g.FillPie(orange, c.X - s * 0.34f, c.Y - s * 0.34f, s * 0.68f, s * 0.68f, -78, 46);
+            g.FillPie(orange, c.X - s * 0.34f, c.Y - s * 0.34f, s * 0.68f, s * 0.68f, -90, 50);
         }
 
         using (var cream = new SolidBrush(Cream))
@@ -188,8 +188,8 @@ public static class StoreAssets
             EndCap = LineCap.Round
         })
         {
-            g.DrawArc(pen, c.X - glyphRadius, c.Y - glyphRadius, glyphRadius * 2, glyphRadius * 2, -48, 276);
-            g.DrawLine(pen, c.X, c.Y - glyphRadius * 0.06f, c.X, c.Y - s * 0.40f);
+            g.DrawArc(pen, c.X - glyphRadius, c.Y - glyphRadius, glyphRadius * 2, glyphRadius * 2, -60, 300);
+            g.DrawLine(pen, c.X, c.Y - glyphRadius * 0.25f, c.X, c.Y - glyphRadius * 1.35f);
         }
     }
 
