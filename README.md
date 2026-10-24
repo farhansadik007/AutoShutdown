@@ -1,5 +1,9 @@
 # AutoShutdown
 
+<p align="center">
+  <img src="docs/logo.png" width="120" alt="AutoShutdown logo" />
+</p>
+
 A Windows auto-shutdown timer with a flat pie-clock UI. Pick a duration, choose what happens when it reaches zero, and walk away.
 
 | Setup | Countdown | Time's up |
