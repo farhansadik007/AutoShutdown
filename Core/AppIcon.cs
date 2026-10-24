@@ -76,23 +76,24 @@ public static class AppIcon
             g.FillEllipse(dial, c - radius, c - radius, radius * 2, radius * 2);
         }
 
-        // The countdown's first bite: an orange slice at the top-right.
+        // The countdown's first bite: an orange slice eaten clockwise from 12 o'clock.
         using (var wedge = new SolidBrush(WedgeAccent))
         {
-            g.FillPie(wedge, c - radius, c - radius, radius * 2, radius * 2, -80, 50);
+            g.FillPie(wedge, c - radius, c - radius, radius * 2, radius * 2, -90, 50);
         }
 
         // Cream power glyph: ring with a top gap plus the vertical stem.
-        var ringRadius = radius * 0.58f;
+        var ringRadius = radius * 0.52f;
+        var penWidth = Math.Max(1.0f, s * 0.07f);
         using (var cream = new SolidBrush(GlyphColor))
-        using (var pen = new Pen(cream, Math.Max(1.05f, s * 0.075f))
+        using (var pen = new Pen(cream, penWidth))
         {
-            StartCap = LineCap.Round,
-            EndCap = LineCap.Round
-        })
-        {
-            g.DrawArc(pen, c - ringRadius, c - ringRadius, ringRadius * 2, ringRadius * 2, -48, 276);
-            g.DrawLine(pen, c, c - ringRadius * 0.05f, c, c - radius * 0.88f);
+            pen.StartCap = LineCap.Round;
+            pen.EndCap = LineCap.Round;
+            // Arc starts at 300° (-60°), sweeps 300° clockwise → gap at top (240°–300°).
+            g.DrawArc(pen, c - ringRadius, c - ringRadius, ringRadius * 2, ringRadius * 2, -60, 300);
+            // Stem from just above the ring centre up through the gap.
+            g.DrawLine(pen, c, c - ringRadius * 0.25f, c, c - ringRadius * 1.35f);
         }
     }
 
