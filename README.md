@@ -1,7 +1,7 @@
 # AutoShutdown
 
 <p align="center">
-  <img src="docs/logo-polished.png" width="120" alt="AutoShutdown logo" />
+  <img src="store/LogoMark-300.png" width="120" alt="AutoShutdown logo" />
 </p>
 
 A Windows auto-shutdown timer with a flat pie-clock UI. Pick a duration, choose what happens when it reaches zero, and walk away.
