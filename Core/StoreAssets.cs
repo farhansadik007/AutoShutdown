@@ -99,6 +99,14 @@ public static class StoreAssets
         Save(assets, "SplashScreen.png", 620, 300, DrawSplash);
         Log.Write($"Store package assets exported to {assets}");
 
+        // ---- marketing logos (75 / 150 / 300) -------------------------------
+        foreach (var size in new[] { 75, 150, 300 })
+        {
+            Save(directory, $"Logo-{size}.png", size, size, DrawStandoutArt);
+            Save(directory, $"LogoMark-{size}.png", size, size, DrawMarkArt);
+        }
+        Log.Write("Marketing logos exported (75/150/300)");
+
         // ---- composed screenshots (from the raw 2x window shots) -------------
         var rawDir = Path.Combine(directory, "raw");
         if (Directory.Exists(rawDir))
