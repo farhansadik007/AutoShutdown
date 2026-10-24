@@ -164,7 +164,7 @@ public static class StoreAssets
         g.DrawImage(copy, (w - size) / 2f, (h - size) / 2f, size, size);
     }
 
-    /// <summary>Full-bleed teal tile with the cream power glyph and orange bite.</summary>
+    /// <summary>Full-bleed teal tile with the polished app mark centred.</summary>
     private static void DrawStandoutArt(Graphics g, int w, int h)
     {
         using (var teal = new SolidBrush(Teal))
@@ -172,25 +172,13 @@ public static class StoreAssets
             g.FillRectangle(teal, 0, 0, w, h);
         }
 
-        var s = (float)Math.Min(w, h);
-        var c = new PointF(w / 2f, h / 2f);
-        var glyphRadius = s * 0.26f;
-
-        using (var orange = new SolidBrush(Orange))
+        var size = (int)(Math.Min(w, h) * 0.72f);
+        using var copy = new Bitmap(size, size);
+        using (var mark = Graphics.FromImage(copy))
         {
-            g.FillPie(orange, c.X - s * 0.34f, c.Y - s * 0.34f, s * 0.68f, s * 0.68f, -90, 50);
+            AppIcon.DrawMark(mark, size);
         }
-
-        using (var cream = new SolidBrush(Cream))
-        using (var pen = new Pen(cream, Math.Max(2f, s * 0.055f))
-        {
-            StartCap = LineCap.Round,
-            EndCap = LineCap.Round
-        })
-        {
-            g.DrawArc(pen, c.X - glyphRadius, c.Y - glyphRadius, glyphRadius * 2, glyphRadius * 2, -60, 300);
-            g.DrawLine(pen, c.X, c.Y - glyphRadius * 0.25f, c.X, c.Y - glyphRadius * 1.35f);
-        }
+        g.DrawImage(copy, (w - size) / 2f, (h - size) / 2f, size, size);
     }
 
     private static void DrawSplash(Graphics g, int w, int h)
