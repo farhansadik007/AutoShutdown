@@ -17,7 +17,7 @@
     ProcessorArchitecture="x64" />
 
   <Properties>
-    <DisplayName>AutoShutdown</DisplayName>
+    <DisplayName>AutoShutdown - Shutdown Timer for PC</DisplayName>
     <PublisherDisplayName>PaperCrane Labs</PublisherDisplayName>
     <Logo>assets\StoreLogo.png</Logo>
   </Properties>
